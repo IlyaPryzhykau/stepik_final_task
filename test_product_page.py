@@ -1,6 +1,7 @@
 import pytest
 from .pages.product_page import ProductPage
 from .pages.locators import ProductPageLocators
+from .pages.basket_page import BasketPage
 import time
 
 initial_url = ProductPageLocators.PRODUCT_URL
@@ -49,6 +50,15 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page.open()
     page.go_to_login_page()
     page.should_be_login_link()
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    page = BasketPage(browser, ProductPageLocators.PRODUCT_URL)
+    page.open()
+    page.go_to_basket_page()
+    page.should_be_empty_basket()
+    page.should_be_text_empty_basket()
+
+
 
 
 
