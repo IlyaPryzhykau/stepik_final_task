@@ -19,6 +19,7 @@ class LoginPageLocators():
 
 class ProductPageLocators():
     PRODUCT_URL = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
+    PRODUCT_URL2 = 'http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/'
     ADD_TO_BASKET = (By.CSS_SELECTOR, '.btn-add-to-basket')
     ITEM_NAME = (By.CSS_SELECTOR, '.product_main h1')
     ITEM_ADDNAME = (By.CSS_SELECTOR, '#messages > div:nth-child(1) > div > strong')
