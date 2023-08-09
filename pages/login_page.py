@@ -8,6 +8,14 @@ class LoginPage(BasePage):
         self.should_be_login_form()
         self.should_be_register_form()
 
+
+    def register_new_user(self, email, password):
+        self.browser.find_element(*LoginPageLocators.INPUT_REGISTER_EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.INPUT_REGISTER_PASS).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.INPUT_REGISTER_PASS2).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.BUTTON_REGISTER).click()
+
+
     def should_be_login_url(self):
         assert "login" in self.browser.current_url, "word \"login\" not in url"
 
